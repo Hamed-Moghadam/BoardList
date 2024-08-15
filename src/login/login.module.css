@@ -1,0 +1,72 @@
+body {
+  margin: 0 0 0 0;
+}
+.maincontainer {
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(42, 40, 40);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.maincontainer form {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  height: 50%;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: baseline;
+  border: 3px solid;
+  background-color: rgba(108, 105, 105, 0.458);
+  padding: 20px;
+  border-radius: 10px;
+}
+.usernameinput,
+.passinput {
+  width: 300px;
+  height: 25px;
+  font-size: 20px;
+  padding-left: 10px;
+}
+.usernameinput,
+.passinput::placeholder {
+  text-align: center;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.subinput {
+  width: 150px;
+  height: 26px;
+  cursor: pointer;
+}
+.forgotpass,
+.remember,
+.register {
+  color: aliceblue;
+  margin-left: 30px;
+}
+.check {
+  width: 20px;
+}
+.eye {
+  width: 30px;
+  height: 30px;
+  margin-left: 0px;
+  margin-bottom: -10px;
+  color: aliceblue;
+}
+.passinput {
+  margin-right: 20px;
+  margin-left: 50px;
+}
+.tittle{
+    color: aliceblue;
+    margin-top: -30px;
+}
