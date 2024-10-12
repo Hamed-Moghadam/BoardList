@@ -13,16 +13,19 @@ function App() {
     <>
       <Routes>
         <Route path="/Login" element={<Login />} />
-        <Route
-          path="/board"
-          element={
-            keyLogin === "1oso93nxc8h3cscd3c8cnksb83c" ? (
-              <Layout />
-            ) : (
-              <Navigate to="/Login" />
-            )
-          }
-        />
+        {keyLogin && (
+          <Route
+            path="/board"
+            element={
+              keyLogin === "1oso93nxc8h3cscd3c8cnksb83c" ? (
+                <Layout />
+              ) : (
+                <Navigate to="/Login" />
+              )
+            }
+          />
+        )}
+
         <Route path="/" element={<Register />} />
       </Routes>
     </>

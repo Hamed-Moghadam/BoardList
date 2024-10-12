@@ -15,6 +15,7 @@ function Register() {
           localStorage.removeItem("username");
           localStorage.removeItem("password");
           localStorage.removeItem("E-mail");
+          localStorage.removeItem("key");
           localStorage.setItem("username", values.username);
           localStorage.setItem("password", values.password);
           localStorage.setItem("E-mail", values.email);
