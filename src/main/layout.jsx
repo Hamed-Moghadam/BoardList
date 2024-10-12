@@ -2,6 +2,7 @@ import { useState } from "react";
 import styles from "./layout.module.css";
 import List from "./list/uiList";
 import { DragDropContext } from "react-beautiful-dnd";
+import { Link } from "react-router-dom";
 
 function Layout() {
   const [listData, setListData] = useState([
@@ -69,7 +70,7 @@ function Layout() {
   const handleRenameCard = (listIndex, cardId, newName) => {
     const updatedListData = [...listData];
     updatedListData[listIndex].map((card) => {
-      if (card.id == cardId ) {
+      if (card.id == cardId) {
         return (card.title = newName);
       }
     });
@@ -77,30 +78,39 @@ function Layout() {
   };
 
   return (
-    <DragDropContext onDragEnd={handleOnDragEnd}>
-      <div className={styles.addlistbtn}>
-        <button onClick={handleAddList}>Add List</button>
-      </div>
-      <div className={styles.listContainer}>
-        {listData.map((cards, index) => (
-          <div key={index} className={styles.listwraper}>
-            <List
-              cards={cards}
-              listId={`list-${index}`}
-              listIndex={index}
-              onRemoveCard={handleRemoveCard}
-              onChangeNameCard={handleRenameCard}
-            />
-            <div className={styles.btncontainer}>
-              <button onClick={() => handleAddCard(index)}>Add Card</button>
-              <button onClick={() => handleRemoveList(index)}>
-                Remove List
-              </button>
-            </div>
+    <>
+      {localStorage.getItem("key") ? (
+        <DragDropContext onDragEnd={handleOnDragEnd}>
+          <div className={styles.addlistbtn}>
+            <button onClick={handleAddList}>Add List</button>
           </div>
-        ))}
-      </div>
-    </DragDropContext>
+          <div className={styles.listContainer}>
+            {listData.map((cards, index) => (
+              <div key={index} className={styles.listwraper}>
+                <List
+                  cards={cards}
+                  listId={`list-${index}`}
+                  listIndex={index}
+                  onRemoveCard={handleRemoveCard}
+                  onChangeNameCard={handleRenameCard}
+                />
+                <div className={styles.btncontainer}>
+                  <button onClick={() => handleAddCard(index)}>Add Card</button>
+                  <button onClick={() => handleRemoveList(index)}>
+                    Remove List
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </DragDropContext>
+      ) : (
+        <div className={styles.logoutcontainer}>
+          <h1>please logiiiiiiin</h1>
+          <Link to={"/Login"}>login</Link>
+        </div>
+      )}
+    </>
   );
 }
 
