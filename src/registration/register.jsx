@@ -12,7 +12,9 @@ function Register() {
         initialValues={{ email: "", username: "", password: "" }}
         validationSchema={validationRegisterSchema}
         onSubmit={(values) => {
-          localStorage.clear();
+          localStorage.removeItem("username");
+          localStorage.removeItem("password");
+          localStorage.removeItem("E-mail");
           localStorage.setItem("username", values.username);
           localStorage.setItem("password", values.password);
           localStorage.setItem("E-mail", values.email);
