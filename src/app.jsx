@@ -14,8 +14,14 @@ function App() {
       <Routes>
         <Route path="/Login" element={<Login />} />
         <Route
-          path="/Board"
-          element={keyLogin === "1oso93nxc8h3cscd3c8cnksb83c" && <Layout />}
+          path="/board"
+          element={
+            keyLogin === "1oso93nxc8h3cscd3c8cnksb83c" ? (
+              <Layout />
+            ) : (
+              <Navigate to="/Login" />
+            )
+          }
         />
         <Route path="/" element={<Register />} />
       </Routes>

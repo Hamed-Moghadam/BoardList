@@ -39,7 +39,7 @@ function Login() {
             console.log(values.username);
             console.log(values.password);
             localStorage.setItem("key", "1oso93nxc8h3cscd3c8cnksb83c");
-            navigate("/Board");
+            navigate("/board");
           } else {
             setUserState(true);
           }
