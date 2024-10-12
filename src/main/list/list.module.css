@@ -1,0 +1,42 @@
+.main {
+  width: 300px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  text-wrap: nowrap;
+  margin-right: 30px;
+  margin-left: 30px;
+}
+.listname {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  text-wrap: nowrap;
+  color: aliceblue;
+  background-color: rgb(42, 40, 40);
+  width: 110%;
+  border: 3px solid #fff;
+  justify-content: space-around;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+.listname button {
+  width: max-content;
+  height: max-content;
+  margin-left: 5px;
+  text-wrap: nowrap;
+  background-color: black;
+  color: aliceblue;
+  cursor: pointer;
+  font-size: 15px;
+}
+.cardcontainer {
+  display: flex;
+  flex-direction: column;
+
+  gap: 30px;
+  margin-right: 25%;
+}

@@ -66,7 +66,12 @@ body {
   margin-right: 20px;
   margin-left: 50px;
 }
-.tittle{
-    color: aliceblue;
-    margin-top: -30px;
+.tittle {
+  color: aliceblue;
+  margin-top: -30px;
+}
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
 }
